@@ -1,5 +1,5 @@
 
-const Student = require('../models/student');
+const Student = require("../models/Student");
 
 const createStudent = async (req, res) => {
   try {
@@ -52,7 +52,7 @@ const updateStudent = async (req, res) => {
             req.params.id,
             req.body,
             {
-               new: true,
+                new: true,
                 runValidators: true
             }
         );

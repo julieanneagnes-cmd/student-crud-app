@@ -1,4 +1,3 @@
-require('dotenv').config();
 const express = require("express");
 const mongoose = require("mongoose");
 const dns = require("node:dns/promises");
@@ -35,7 +34,8 @@ app.use("/api/students", studentRoutes);
 
 
 // Connect to MongoDB
-mongoose.connect(process.env.MONGODB_URI)
+mongoose
+    .connect(process.env.MONGODB_URI)
     .then(() => {
         console.log("Connected to MongoDB");
 
@@ -48,4 +48,3 @@ mongoose.connect(process.env.MONGODB_URI)
     .catch((error) => {
         console.error("MongoDB connection error:", error);
     });
-
